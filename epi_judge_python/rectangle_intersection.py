@@ -6,8 +6,24 @@ from test_framework.test_failure import PropertyName
 Rectangle = collections.namedtuple('Rectangle', ('x', 'y', 'width', 'height'))
 
 
+"""
+Given two rectangles parallel to x- and y-axis
+Test if the rectangles have a non-empty intersection
+Return the intersection rectangle
+"""
+
+
 def intersect_rectangle(R1, R2):
-    # TODO - you fill in here.
+    def to_coords(R):
+        x1 = R.x
+        y1 = R.y
+        assert R.width >= 0
+        x2 = x1 + R.width
+        assert R.height >= 0
+        y2 = y1 + R.height
+
+    r1_x1, r1_y1, r1_x2, r1_y2 = 
+
     return Rectangle(0, 0, 0, 0)
 
 
