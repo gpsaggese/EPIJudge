@@ -6,9 +6,52 @@ from test_framework.random_sequence_checker import (
     compute_combination_idx, run_func_with_retries)
 from test_framework.test_utils import enable_executor_hook
 
+"""
+Select a random subset of customers
+Input: array of distinct elements and a size n
+Output: Subset of the given size of the array
+All subsets should be equalli likely
+Return the output in the input array
+
+# Brute force
+- Shuffle and pick the first n
+- The problem is that one computes extra random values not needed
+- Complexity is O(n)
+
+# Remarks:
+- Do we have a random number gen?
+- How many subsets there are (n k)
+
+# Horrible solution
+- Select each value with prob k / n
+    - Not guaranteed that the array is exactly k
+
+# Solution
+- Y = []
+- Pick an element at random from Aj
+- Remove element from A and add it to Y
+
+- Complexity is O(k)
+- If k > n/2 we can make it O(n - k) < O(k) by picking the one to remove
+
+# Variant
+
+- 0 to 5
+
+- If R is uniform in [0, k - 1]
+- Is R % n uniform in [0, n - 1]
+
+- to be uniform <==> Pr(R % n == j) == 1/n forall j
+- <==> R % n == j needs to send the same 
+"""
+import random
+
 
 def random_sampling(k, A):
-    # TODO - you fill in here.
+    X = []
+    assert 1 <= k < len(A)
+    for i in range(k):
+        x = random.randint(len(A))
     return
 
 
